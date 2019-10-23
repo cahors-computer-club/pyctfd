@@ -25,6 +25,9 @@ class CTFd(object):
     PATH_GET_FLAG = r"/api/v1/flags/%d"
     PATH_NONCE_PATCH_FLAG = r"/admin/challenges/%d" 
     PATH_PATCH_FLAG = r"/api/v1/flags/%d"
+    PATH_NONCE_DELETE_FLAG = r"/admin/challenges/%d" 
+    PATH_DELETE_FLAG = r"/api/v1/flags/%d"
+    PATH_GET_CHALLENGE_FLAGS = r"/api/v1/challenges/%d/flags"
 
     def __init__(self, host):
         """
@@ -276,6 +279,63 @@ class CTFd(object):
                 },
                 json=kwargs
             )
+            if r.status_code == 200:
+                j = r.json()
+                ret = j if j["success"] is True else ret
+
+        return  ret
+
+    def delete_flag(self, fid):
+        """
+        fid: flag id
+        """
+        ret = None
+        if self.logged_in is True:
+            r = self.s.get(
+                urljoin(
+                    self.host,
+                    self.__class__.PATH_GET_FLAG % (fid)
+                )
+            )
+            challenge_id = r.json()["data"]["challenge_id"]
+            r = self.s.get(
+                urljoin(
+                    self.host,
+                    self.__class__.PATH_NONCE_DELETE_FLAG % (challenge_id)
+                )
+            )
+
+            m = re.search(
+                r'var csrf_nonce = "(.+?)";',
+                r.text
+            )
+            nonce = m.group(1)
+            r = self.s.delete(
+                urljoin(
+                    self.host,
+                    self.__class__.PATH_DELETE_FLAG % (fid)
+                ),
+                json={},
+                headers={
+                    "CSRF-Token": nonce
+                }
+            )
+            if r.status_code == 200:
+                j = r.json()
+                ret = j if j["success"] is True else ret
+        return  ret
+
+    def get_challenge_flags(self, cid):
+        ret = None
+        if self.logged_in is True:
+            print(urljoin(
+                self.host,
+                self.__class__.PATH_GET_CHALLENGE_FLAGS % (cid)
+            ))
+            r = self.s.get(urljoin(
+                self.host,
+                self.__class__.PATH_GET_CHALLENGE_FLAGS % (cid)
+            ))
             if r.status_code == 200:
                 j = r.json()
                 ret = j if j["success"] is True else ret
