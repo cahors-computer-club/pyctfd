@@ -10,5 +10,5 @@ setup(
       author_email='quentin.poirier@opus-solutions.eu',
       url='https://github.com/swagcurity/pyctfd',
       packages=['pyctfd'],
-      scripts=["bin/ctfd-upsert-challenge"]
+      scripts=["bin/ctfd-upsert-challenge", "bin/ctfd-setup"]
 )

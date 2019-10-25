@@ -79,6 +79,8 @@ class CTFd(object):
                 self.__class__.PATH_SETUP
             )
         )
+        if r.status_code == 302:
+            return True
 
         m = re.search(
             r'var csrf_nonce = "(.+?)";',

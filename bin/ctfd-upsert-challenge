@@ -8,8 +8,6 @@ import os.path
 from pyctfd import CTFd
 
 def read_apply_conf(ctfd, config_file, cid=None):
-    conf = None
-
     with open(config_file, "rb") as f:
         conf = json.loads(f.read())
 
@@ -69,7 +67,9 @@ def main():
     args = ap.parse_args()
     ctfd = CTFd(os.getenv("CTFD_HOST"))
     ctfd.login(os.getenv("CTFD_ADMIN"), os.getenv("CTFD_PASSWORD"))
-    print(read_apply_conf(ctfd, args.config, args.id))
+    chall = read_apply_conf(ctfd, args.config, args.id)
+    print(chall)
+    assert(type(chall["id"]) == int and chall["id"] >= 0)
 
 if __name__ == "__main__":
     main()
