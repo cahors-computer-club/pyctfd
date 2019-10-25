@@ -18,8 +18,9 @@ def read_apply_conf(ctfd, config_file, name, password, email):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("-c", "--config", help="CTFd config file", type=str)
+    ap.add_argument("--no-ssl-verification", help="disable verification of https certificates", action='store_true')
     args = ap.parse_args()
-    ctfd = CTFd(os.getenv("CTFD_HOST"))
+    ctfd = CTFd(os.getenv("CTFD_HOST"), not args.no_ssl_verification)
     assert(read_apply_conf(ctfd, args.config, os.getenv("CTFD_ADMIN"), os.getenv("CTFD_PASSWORD"), os.getenv("CTFD_EMAIL")) is True)
 
 if __name__ == "__main__":

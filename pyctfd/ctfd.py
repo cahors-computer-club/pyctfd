@@ -53,12 +53,14 @@ class CTFd(object):
     PATH_GET_CHALLENGE_FILES = r"/api/v1/challenges/%d/files"
     PATH_GET_FILE = r"/api/v1/files/%d"
 
-    def __init__(self, host):
+    def __init__(self, host, verify=True):
         """
             host: CTFd URL
         """
         self.host = host
         self.s = requests.Session()
+        if verify is False:
+            self.s.verify = False
         self.logged_in = False
 
     def setup(self, **kwargs):
