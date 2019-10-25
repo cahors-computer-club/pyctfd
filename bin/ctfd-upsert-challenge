@@ -66,10 +66,10 @@ def main():
     ap.add_argument("-i", "--id", help="challenge id", type=int, nargs='?', default=None)
     args = ap.parse_args()
     ctfd = CTFd(os.getenv("CTFD_HOST"))
-    ctfd.login(os.getenv("CTFD_ADMIN"), os.getenv("CTFD_PASSWORD"))
+    assert(ctfd.login(os.getenv("CTFD_ADMIN"), os.getenv("CTFD_PASSWORD")) is True)
     chall = read_apply_conf(ctfd, args.config, args.id)
-    print(chall)
-    assert(type(chall["id"]) == int and chall["id"] >= 0)
+    print(json.dumps(chall))
+    assert(type(chall["data"]["id"]) == int and chall["data"]["id"] >= 0)
 
 if __name__ == "__main__":
     main()
