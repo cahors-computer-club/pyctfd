@@ -94,7 +94,6 @@ class CTFd(object):
                 args[key] = kwargs[key]
 
         args["nonce"] = nonce
-        print(args)
 
         r = self.s.post(
             urljoin(
@@ -107,7 +106,6 @@ class CTFd(object):
             data=args,
             allow_redirects=False
         )
-        print(r.text)
         ret = (r.status_code == 302)
         return ret
 
@@ -690,7 +688,6 @@ class CTFd(object):
                 },
                 json=args
             )
-            print(r.text)
             if r.status_code == 200:
                 j = r.json()
                 ret = j if j["success"] is True else ret
