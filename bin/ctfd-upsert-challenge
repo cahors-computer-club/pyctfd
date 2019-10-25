@@ -1,0 +1,75 @@
+#!/usr/bin/env python
+
+import argparse
+import os
+import json
+import itertools
+import os.path
+from pyctfd import CTFd
+
+def read_apply_conf(ctfd, config_file, cid=None):
+    conf = None
+
+    with open(config_file, "rb") as f:
+        conf = json.loads(f.read())
+
+    if cid is None:
+        chall = ctfd.create_challenge(**conf)
+        cid = chall["data"]["id"]
+    else:
+        chall = ctfd.patch_challenge(cid, **conf)
+
+    flags = ctfd.get_challenge_flags(cid)
+    zflags = itertools.zip_longest(flags["data"], conf["flags"])
+    for iflag, nflag in zflags:
+        if iflag is None:
+            ctfd.create_flag(cid, **nflag)
+        elif nflag is None:
+            ctfd.delete_flag(iflag["id"])
+        else:
+            ctfd.patch_flag(iflag["id"], **nflag)
+
+    hints = ctfd.get_challenge_hints(cid)
+    zhints = itertools.zip_longest(hints["data"], conf["hints"])
+    for ihint, nhint in zhints:
+        if ihint is None:
+            ctfd.create_hint(cid, **nhint)
+        elif nhint is None:
+            ctfd.delete_hint(ihint["id"])
+        else:
+            ctfd.patch_hint(ihint["id"], **nhint)
+
+    tags = ctfd.get_challenge_tags(cid)
+    ztags = itertools.zip_longest(tags["data"], conf["tags"])
+    for itag, ntag in ztags:
+        if itag is None:
+            ctfd.create_tag(cid, value=ntag)
+        elif ntag is None:
+            ctfd.delete_tag(itag["id"])
+        else:
+            ctfd.patch_tag(itag["id"], value=ntag)
+
+    files = ctfd.get_challenge_files(cid)
+    for f in files["data"]:
+        ctfd.delete_file(cid, f["id"])
+    for f in conf["files"]:
+        ctfd.create_file(
+            cid,
+            file=open(f["path"], "rb"),
+            filename=f["filename"],
+            mime=f["mime"]
+        )    
+    
+    return chall
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("-c", "--config", help="challenge config file", type=str)
+    ap.add_argument("-i", "--id", help="challenge id", type=int, nargs='?', default=None)
+    args = ap.parse_args()
+    ctfd = CTFd(os.getenv("CTFD_HOST"))
+    ctfd.login(os.getenv("CTFD_ADMIN"), os.getenv("CTFD_PASSWORD"))
+    print(read_apply_conf(ctfd, args.config, args.id))
+
+if __name__ == "__main__":
+    main()
