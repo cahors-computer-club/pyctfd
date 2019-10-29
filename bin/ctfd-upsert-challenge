@@ -15,7 +15,12 @@ def read_apply_conf(ctfd, config_file, cid=None):
         chall = ctfd.create_challenge(**conf)
         cid = chall["data"]["id"]
     else:
-        chall = ctfd.patch_challenge(cid, **conf)
+        chall = ctfd.get_challenge(cid)
+        if chall["data"]["type"] != conf["type"]:
+            chall.delete_challenge(cid)
+            chall = ctfd.create_challenge(**conf)
+        else:
+            chall = ctfd.patch_challenge(cid, **conf)
 
     flags = ctfd.get_challenge_flags(cid)
     zflags = itertools.zip_longest(flags["data"], conf["flags"])

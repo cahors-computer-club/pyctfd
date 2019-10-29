@@ -15,6 +15,7 @@ class CTFd(object):
     PATH_GET_CURRENT_USER = r"/api/v1/users/me" 
     PATH_GET_CHALLENGES = r"/api/v1/challenges" 
     PATH_GET_CHALLENGE = r"/api/v1/challenges/%d"
+    PATH_NONCE_DELETE_CHALLENGE = r"/admin/challenges/%d" 
     PATH_DELETE_CHALLENGE = r"/api/v1/challenges/%d"
     PATH_NONCE_CREATE_CHALLENGE = r"/admin/challenges/new" 
     PATH_CREATE_CHALLENGE = r"/api/v1/challenges"
@@ -285,6 +286,39 @@ class CTFd(object):
                 j = r.json()
                 ret = j if j["success"] is True else ret
 
+        return  ret
+
+    def delete_challenge(self, cid):
+        """
+        cid: challenge id
+        """
+        ret = None
+        if self.logged_in is True:
+            r = self.s.get(
+                urljoin(
+                    self.host,
+                    self.__class__.PATH_NONCE_DELETE_CHALLENGE % (cid)
+                )
+            )
+
+            m = re.search(
+                r'var csrf_nonce = "(.+?)";',
+                r.text
+            )
+            nonce = m.group(1)
+            r = self.s.delete(
+                urljoin(
+                    self.host,
+                    self.__class__.PATH_DELETE_CHALLENGE % (cid)
+                ),
+                json={},
+                headers={
+                    "CSRF-Token": nonce
+                }
+            )
+            if r.status_code == 200:
+                j = r.json()
+                ret = j if j["success"] is True else ret
         return  ret
 
     def create_flag(self, cid, **kwargs):
