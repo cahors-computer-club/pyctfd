@@ -254,7 +254,7 @@ class CTFd(object):
             r = self.s.get(
                 urljoin(
                     self.host,
-                    self.__class__.PATH_NONCE_PATCH_CHALLENGE
+                    self.__class__.PATH_NONCE_PATCH_CHALLENGE % (cid)
                 )
             )
 
