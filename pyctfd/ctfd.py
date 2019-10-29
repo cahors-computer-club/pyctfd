@@ -194,6 +194,8 @@ class CTFd(object):
             value: int
             state: str, ("hidden", "locked", "visible"),
             type: str, ("standard", "dynamic"),
+            decay: int, #only if challenge is dynamic
+            minimum: int, #only if challenge is dynamic
         }
         """
         ret = None
@@ -212,7 +214,7 @@ class CTFd(object):
             nonce = m.group(1)
 
             args = {}
-            params = ["description", "category", "name", "value", "state", "type"]
+            params = ["description", "category", "name", "value", "state", "type", "decay", "minimum"]
             args = {}
             for key in params:
                 if key in kwargs.keys():
@@ -263,7 +265,7 @@ class CTFd(object):
             nonce = m.group(1)
 
             args = {}
-            params = ["description", "category", "name", "value", "state", "type"]
+            params = ["description", "category", "name", "value", "state", "type", "decay", "minimum"]
             args = {}
             for key in params:
                 if key in kwargs.keys():
