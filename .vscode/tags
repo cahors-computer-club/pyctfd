@@ -1,0 +1,78 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/3fdf28bc/
+CTFd	../pyctfd/ctfd.py	/^class CTFd(object):$/;"	kind:class	line:11
+PATH_CREATE_CHALLENGE	../pyctfd/ctfd.py	/^    PATH_CREATE_CHALLENGE = r"\/api\/v1\/challenges"$/;"	kind:variable	line:22
+PATH_CREATE_FILE	../pyctfd/ctfd.py	/^    PATH_CREATE_FILE = r"\/api\/v1\/files" $/;"	kind:variable	line:52
+PATH_CREATE_FLAG	../pyctfd/ctfd.py	/^    PATH_CREATE_FLAG = r"\/api\/v1\/flags" $/;"	kind:variable	line:26
+PATH_CREATE_HINT	../pyctfd/ctfd.py	/^    PATH_CREATE_HINT = r"\/api\/v1\/hints" $/;"	kind:variable	line:46
+PATH_CREATE_TAG	../pyctfd/ctfd.py	/^    PATH_CREATE_TAG = r"\/api\/v1\/tags" $/;"	kind:variable	line:38
+PATH_DELETE_CHALLENGE	../pyctfd/ctfd.py	/^    PATH_DELETE_CHALLENGE = r"\/api\/v1\/challenges\/%d"$/;"	kind:variable	line:20
+PATH_DELETE_FILE	../pyctfd/ctfd.py	/^    PATH_DELETE_FILE = r"\/api\/v1\/files\/%d"$/;"	kind:variable	line:54
+PATH_DELETE_FLAG	../pyctfd/ctfd.py	/^    PATH_DELETE_FLAG = r"\/api\/v1\/flags\/%d"$/;"	kind:variable	line:31
+PATH_DELETE_HINT	../pyctfd/ctfd.py	/^    PATH_DELETE_HINT = r"\/api\/v1\/hints\/%d"$/;"	kind:variable	line:44
+PATH_DELETE_TAG	../pyctfd/ctfd.py	/^    PATH_DELETE_TAG = r"\/api\/v1\/tags\/%d"$/;"	kind:variable	line:36
+PATH_GET_CHALLENGE	../pyctfd/ctfd.py	/^    PATH_GET_CHALLENGE = r"\/api\/v1\/challenges\/%d"$/;"	kind:variable	line:18
+PATH_GET_CHALLENGES	../pyctfd/ctfd.py	/^    PATH_GET_CHALLENGES = r"\/api\/v1\/challenges" $/;"	kind:variable	line:17
+PATH_GET_CHALLENGE_FILES	../pyctfd/ctfd.py	/^    PATH_GET_CHALLENGE_FILES = r"\/api\/v1\/challenges\/%d\/files"$/;"	kind:variable	line:55
+PATH_GET_CHALLENGE_FLAGS	../pyctfd/ctfd.py	/^    PATH_GET_CHALLENGE_FLAGS = r"\/api\/v1\/challenges\/%d\/flags"$/;"	kind:variable	line:32
+PATH_GET_CHALLENGE_HINTS	../pyctfd/ctfd.py	/^    PATH_GET_CHALLENGE_HINTS = r"\/api\/v1\/challenges\/%d\/hints"$/;"	kind:variable	line:49
+PATH_GET_CHALLENGE_TAGS	../pyctfd/ctfd.py	/^    PATH_GET_CHALLENGE_TAGS = r"\/api\/v1\/challenges\/%d\/tags"$/;"	kind:variable	line:41
+PATH_GET_CURRENT_USER	../pyctfd/ctfd.py	/^    PATH_GET_CURRENT_USER = r"\/api\/v1\/users\/me" $/;"	kind:variable	line:16
+PATH_GET_FILE	../pyctfd/ctfd.py	/^    PATH_GET_FILE = r"\/api\/v1\/files\/%d"$/;"	kind:variable	line:56
+PATH_GET_FLAG	../pyctfd/ctfd.py	/^    PATH_GET_FLAG = r"\/api\/v1\/flags\/%d"$/;"	kind:variable	line:27
+PATH_GET_HINT	../pyctfd/ctfd.py	/^    PATH_GET_HINT = r"\/api\/v1\/hints\/%d"$/;"	kind:variable	line:42
+PATH_GET_TAG	../pyctfd/ctfd.py	/^    PATH_GET_TAG = r"\/api\/v1\/tags\/%d"$/;"	kind:variable	line:34
+PATH_NONCE_CREATE_CHALLENGE	../pyctfd/ctfd.py	/^    PATH_NONCE_CREATE_CHALLENGE = r"\/admin\/challenges\/new" $/;"	kind:variable	line:21
+PATH_NONCE_CREATE_FILE	../pyctfd/ctfd.py	/^    PATH_NONCE_CREATE_FILE = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:51
+PATH_NONCE_CREATE_FLAG	../pyctfd/ctfd.py	/^    PATH_NONCE_CREATE_FLAG = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:25
+PATH_NONCE_CREATE_HINT	../pyctfd/ctfd.py	/^    PATH_NONCE_CREATE_HINT = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:45
+PATH_NONCE_CREATE_TAG	../pyctfd/ctfd.py	/^    PATH_NONCE_CREATE_TAG = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:37
+PATH_NONCE_DELETE_CHALLENGE	../pyctfd/ctfd.py	/^    PATH_NONCE_DELETE_CHALLENGE = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:19
+PATH_NONCE_DELETE_FILE	../pyctfd/ctfd.py	/^    PATH_NONCE_DELETE_FILE = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:53
+PATH_NONCE_DELETE_FLAG	../pyctfd/ctfd.py	/^    PATH_NONCE_DELETE_FLAG = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:30
+PATH_NONCE_DELETE_HINT	../pyctfd/ctfd.py	/^    PATH_NONCE_DELETE_HINT = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:43
+PATH_NONCE_DELETE_TAG	../pyctfd/ctfd.py	/^    PATH_NONCE_DELETE_TAG = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:35
+PATH_NONCE_PATCH_CHALLENGE	../pyctfd/ctfd.py	/^    PATH_NONCE_PATCH_CHALLENGE = r"\/admin\/challenges\/%d"$/;"	kind:variable	line:23
+PATH_NONCE_PATCH_FLAG	../pyctfd/ctfd.py	/^    PATH_NONCE_PATCH_FLAG = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:28
+PATH_NONCE_PATCH_HINT	../pyctfd/ctfd.py	/^    PATH_NONCE_PATCH_HINT = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:47
+PATH_NONCE_PATCH_TAG	../pyctfd/ctfd.py	/^    PATH_NONCE_PATCH_TAG = r"\/admin\/challenges\/%d" $/;"	kind:variable	line:39
+PATH_PATCH_CHALLENGE	../pyctfd/ctfd.py	/^    PATH_PATCH_CHALLENGE = r"\/api\/v1\/challenges\/%d"$/;"	kind:variable	line:24
+PATH_PATCH_FLAG	../pyctfd/ctfd.py	/^    PATH_PATCH_FLAG = r"\/api\/v1\/flags\/%d"$/;"	kind:variable	line:29
+PATH_PATCH_HINT	../pyctfd/ctfd.py	/^    PATH_PATCH_HINT = r"\/api\/v1\/hints\/%d"$/;"	kind:variable	line:48
+PATH_PATCH_TAG	../pyctfd/ctfd.py	/^    PATH_PATCH_TAG = r"\/api\/v1\/tags\/%d"$/;"	kind:variable	line:40
+PATH_SETUP	../pyctfd/ctfd.py	/^    PATH_SETUP = r"\/setup" $/;"	kind:variable	line:33
+__all__	../pyctfd/__init__.py	/^__all__ = ["CTFd"]/;"	kind:variable	line:3
+__init__	../pyctfd/ctfd.py	/^    def __init__(self, host, verify=True):$/;"	kind:member	line:58
+__init__.py	../pyctfd/__init__.py	1;"	kind:file	line:1
+create_challenge	../pyctfd/ctfd.py	/^    def create_challenge(self, **kwargs):$/;"	kind:member	line:189
+create_file	../pyctfd/ctfd.py	/^    def create_file(self, cid, **kwargs):$/;"	kind:member	line:791
+create_flag	../pyctfd/ctfd.py	/^    def create_flag(self, cid, **kwargs):$/;"	kind:member	line:325
+create_hint	../pyctfd/ctfd.py	/^    def create_hint(self, cid, **kwargs):$/;"	kind:member	line:638
+create_tag	../pyctfd/ctfd.py	/^    def create_tag(self, cid, **kwargs):$/;"	kind:member	line:484
+ctfd.py	../pyctfd/ctfd.py	1;"	kind:file	line:1
+delete_challenge	../pyctfd/ctfd.py	/^    def delete_challenge(self, cid):$/;"	kind:member	line:292
+delete_file	../pyctfd/ctfd.py	/^    def delete_file(self, cid, fid):$/;"	kind:member	line:836
+delete_flag	../pyctfd/ctfd.py	/^    def delete_flag(self, fid):$/;"	kind:member	line:431
+delete_hint	../pyctfd/ctfd.py	/^    def delete_hint(self, hid):$/;"	kind:member	line:738
+delete_tag	../pyctfd/ctfd.py	/^    def delete_tag(self, tid):$/;"	kind:member	line:585
+get_challenge	../pyctfd/ctfd.py	/^    def get_challenge(self, cid: int):$/;"	kind:member	line:176
+get_challenge_files	../pyctfd/ctfd.py	/^    def get_challenge_files(self, cid):$/;"	kind:member	line:869
+get_challenge_flags	../pyctfd/ctfd.py	/^    def get_challenge_flags(self, cid):$/;"	kind:member	line:471
+get_challenge_hints	../pyctfd/ctfd.py	/^    def get_challenge_hints(self, cid):$/;"	kind:member	line:778
+get_challenge_tags	../pyctfd/ctfd.py	/^    def get_challenge_tags(self, cid):$/;"	kind:member	line:625
+get_challenges	../pyctfd/ctfd.py	/^    def get_challenges(self):$/;"	kind:member	line:163
+get_current_user	../pyctfd/ctfd.py	/^    def get_current_user(self):$/;"	kind:member	line:150
+login	../pyctfd/ctfd.py	/^    def login(self, login: str, password: str):$/;"	kind:member	line:118
+main	../env/test.py	/^def main(args):$/;"	kind:function	line:8
+patch_challenge	../pyctfd/ctfd.py	/^    def patch_challenge(self, cid: int, **kwargs):$/;"	kind:member	line:241
+patch_flag	../pyctfd/ctfd.py	/^    def patch_flag(self, fid, **kwargs):$/;"	kind:member	line:374
+patch_hint	../pyctfd/ctfd.py	/^    def patch_hint(self, hid, **kwargs):$/;"	kind:member	line:685
+patch_tag	../pyctfd/ctfd.py	/^    def patch_tag(self, tid, **kwargs):$/;"	kind:member	line:531
+setup	../pyctfd/ctfd.py	/^    def setup(self, **kwargs):$/;"	kind:member	line:68
+setup.py	../setup.py	1;"	kind:file	line:1
+test.py	../env/test.py	1;"	kind:file	line:1

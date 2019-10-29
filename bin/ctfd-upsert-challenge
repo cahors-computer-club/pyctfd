@@ -21,6 +21,7 @@ def read_apply_conf(ctfd, config_file, cid=None):
         elif chall["data"]["type"] != conf["type"]:
             ctfd.delete_challenge(cid)
             chall = ctfd.create_challenge(**conf)
+            cid = chall["data"]["id"]
         else:
             chall = ctfd.patch_challenge(cid, **conf)
 
