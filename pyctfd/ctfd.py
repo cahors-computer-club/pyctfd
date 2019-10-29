@@ -311,9 +311,9 @@ class CTFd(object):
                     self.host,
                     self.__class__.PATH_DELETE_CHALLENGE % (cid)
                 ),
-                json={},
                 headers={
-                    "CSRF-Token": nonce
+                    "CSRF-Token": nonce,
+                    "Content-Type": "application/json"
                 }
             )
             if r.status_code == 200:
